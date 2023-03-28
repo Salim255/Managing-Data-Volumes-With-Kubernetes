@@ -14,4 +14,13 @@ spec:
     spec:
       containers:
         - name: story
-          image: crawan/kube-data-volume
+          image: crawan/kube-data-volume:1
+          # To make the volume defined in volumes section available for the container
+          # And define where the voulume should be mounted
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          emptyDir: {}
+          # This directory will servive as soon as the pod is a life, and when the pod is recreated then a new empty directory will be created

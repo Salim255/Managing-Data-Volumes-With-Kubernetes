@@ -21,3 +21,7 @@
 ## 3\ docker build -t crawan/kube-data-volume .
 
 ## 4\ docker push crawan/kube-data-volume
+
+## 5\ Choose Kubernetes volumes type, we start with "emptyDir type"
+
+# Volumes depend on the pods, because are attached to pods, so we have to deine a volume in the place where we define a pod, here will be in deplyment.yaml file
