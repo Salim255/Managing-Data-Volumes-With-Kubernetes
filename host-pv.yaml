@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: host-pv
+spec:
+  capacity:
+    storage: 1Gi
+  #To define how match capacity can be used by the diffrent pods later executed in our cluster
+  volumeMode: Filesystem
+  # There are two available mode "Filesystem, Block", and this differnt storage types
+  # Here we use Filesystem because we have a file in our virtual machine
+  accessModes:
+    # How it may be access, and there are 3 access mode we can add
+    - ReadWriteOnce
+    #ReadWriteOnce, means this volume can be mounted as read/write volume by a single node, so by multiples pods but all should be in the same node
+    #- ReadOnlyMany
+    # ReadOnlyMany, read onley but it can be claimed by multiple nodes
+    # - ReadWriteMany
+  hostPath:
+    path: /data
+    type: DirectoryOrCreate

@@ -27,3 +27,13 @@
 # Volumes depend on the pods, because are attached to pods, so we have to deine a volume in the place where we define a pod, here will be in deplyment.yaml file
 
 # The hostPath is better than emptyDir stype, but hostPath is node spec, so if we have multiples nodes we still have a problem with the volume, so we need an other solution because the replicas runs in differnt node will not have access to voulume that in other node, but this methode is still very useful if you want to make your data independant from diffrent pod
+
+# ☂️ CSI ype "Container Storage interface"
+
+## Bas side of CSI
+
+### 1\ Valumes are detroyed when a pod is removed
+
+### 2\ New cread pod will not have access to the data created be the old pod
+
+# Persistent Volumes build for pod and nodes independence, how data is stored and how the are not lost when pod is distroyed or created, finding them in central plces then use the volumes in differnts pod, without editing multiple pod yaml files
