@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: host-pvc
+  # The claim's name to be used in a pod
+spec:
+  #The configuration for this claim
+  volumeName: host-pv
+  #To connect our claim to presistentVolume, we use  persitentVolum name, in our caise "host-pv"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    #Resource to define which resource we want to get for this calim
+    requests:
+      storage: 1Gi
+      #To deterime the maximum of resource that we can get from the volume, defined in capacity in host-pv.yaml
+#So this a claim that can be used by pod to make use of that persistentVolume defined in hot-pv.yaml

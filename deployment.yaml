@@ -25,9 +25,12 @@ spec:
           #emptyDir: {} type1
           # This directory will servive as soon as the pod is a life, and when the pod is recreated then a new empty directory will be created
           #Type two is hostPath
-          hostPath:
-            #Bind the path in the host machine
-            path: /data
-            # Add type to make kubenetes know how this path should be handled
-            type: DirectoryOrCreate
-            # We send a message to kuber to tell the directory  /data if it's not exit then should be create
+          #hostPath:
+          #Bind the path in the host machine
+          #path: /data
+          # Add type to make kubenetes know how this path should be handled
+          #type: DirectoryOrCreate
+          # We send a message to kuber to tell the directory  /data if it's not exit then should be create
+          PersistentVolumeClaim:
+            claimName: host-pvc
+            #Name that declared in host-pvc.yaml file
