@@ -31,6 +31,6 @@ spec:
           # Add type to make kubenetes know how this path should be handled
           #type: DirectoryOrCreate
           # We send a message to kuber to tell the directory  /data if it's not exit then should be create
-          PersistentVolumeClaim:
+          persistentVolumeClaim:
             claimName: host-pvc
             #Name that declared in host-pvc.yaml file

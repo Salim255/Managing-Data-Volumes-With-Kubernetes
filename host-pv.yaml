@@ -9,6 +9,8 @@ spec:
   volumeMode: Filesystem
   # There are two available mode "Filesystem, Block", and this differnt storage types
   # Here we use Filesystem because we have a file in our virtual machine
+  storageClassName: standard
+  #It sstand because minikube storage class name  be default it standard" kubectl get sc""
   accessModes:
     # How it may be access, and there are 3 access mode we can add
     - ReadWriteOnce

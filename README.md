@@ -37,3 +37,15 @@
 ### 2\ New cread pod will not have access to the data created be the old pod
 
 # Persistent Volumes build for pod and nodes independence, how data is stored and how the are not lost when pod is distroyed or created, finding them in central plces then use the volumes in differnts pod, without editing multiple pod yaml files
+
+# First, create the persistentVolume: run: kubectl apply -f=host-pv.yaml
+
+# Second apply the claim to create the calim: run: kubectl apply -f=host-pvc.yaml
+
+# Therd apply the deployment: run: kubectl apply -f=deployment.yaml
+
+# run kubectl get pv, to get a list of all persistent volumes
+
+# Run: $ kubectl get pvc, to your claim
+
+# Now our pods in created by deplpyment use pvc as volume

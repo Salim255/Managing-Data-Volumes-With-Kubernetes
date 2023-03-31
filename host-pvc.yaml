@@ -9,6 +9,7 @@ spec:
   #To connect our claim to presistentVolume, we use  persitentVolum name, in our caise "host-pv"
   accessModes:
     - ReadWriteOnce
+  storageClassName: standard
   resources:
     #Resource to define which resource we want to get for this calim
     requests:
